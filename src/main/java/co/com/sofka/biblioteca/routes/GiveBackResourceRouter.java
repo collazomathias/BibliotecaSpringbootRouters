@@ -17,7 +17,7 @@ public class GiveBackResourceRouter {
     @Bean
     public RouterFunction<ServerResponse> devolver(GiveBackResourceUseCaseImplementation useCase){
 
-        return route(PUT("/resources/giveBack/{id}").and(accept(MediaType.APPLICATION_JSON)),
+        return route(PUT("/resources/giveback/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(BodyInserters.fromPublisher(useCase.isBorrowed(request.pathVariable("id")), String.class))

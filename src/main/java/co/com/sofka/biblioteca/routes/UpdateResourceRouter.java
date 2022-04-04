@@ -17,7 +17,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class UpdateResourceRouter {
     @Bean
     public RouterFunction<ServerResponse> update(UpdateResourceUseCaseImplementation useCase){
-        return route(PUT("/resources/update").and(accept(MediaType.APPLICATION_JSON)), request -> request
+        return route(PUT("/resources/update/{id}").and(accept(MediaType.APPLICATION_JSON)), request -> request
                         .bodyToMono(ResourceDTO.class)
                         .flatMap(dto -> useCase.apply(dto)
                             .flatMap(result -> ServerResponse.ok()

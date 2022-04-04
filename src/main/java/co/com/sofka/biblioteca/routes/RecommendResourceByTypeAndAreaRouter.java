@@ -16,7 +16,7 @@ public class RecommendResourceByTypeAndAreaRouter {
     @Bean
     public RouterFunction<ServerResponse> recomendarRecurso(RecommendResourceByTypeAndAreaUseCaseImplementation useCase){
 
-        return route(GET("/resources/{type}/{area}")
+        return route(GET("/resources/recommend/{type}/{area}")
                 .and(accept(MediaType.APPLICATION_JSON)), request -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(

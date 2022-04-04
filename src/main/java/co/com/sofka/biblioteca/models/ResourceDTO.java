@@ -137,4 +137,6 @@ public class ResourceDTO {
                 + nombre + ", tema=" + tema + ", tipo=" + tipo + "]";
     }
 
+    
+
 }
